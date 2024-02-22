@@ -65,9 +65,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Company.cs" />
     <Compile Include="CompanyService.svc.cs">
       <DependentUpon>CompanyService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="ICompanyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

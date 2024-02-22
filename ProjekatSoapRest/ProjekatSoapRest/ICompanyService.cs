@@ -8,7 +8,6 @@ using System.Text;
 
 namespace ProjekatSoapRest
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface ICompanyService
     {
@@ -19,16 +18,24 @@ namespace ProjekatSoapRest
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // TODO: Add your service operations here
-
+        // post http://localhost:52336/CompanyService.svc/Company
+        // primer jsona za ovaj post: {"Id":"5","Name":"PepsiCo", "Departments":["Tehnoloski", "Prodajni"], "Employees":[{"JMBG":"12", "FirstName":"Marko", "LastName":"Markovic", "Email":"markoni@gmail.com", "DeservesRaise":false, "DateOfBirth":"2017-09-08 11:20:12"}]}
         [OperationContract]
-        [WebInvoke(Method = "GET", 
-            UriTemplate = "/Company/{companyId}", 
-            BodyStyle = WebMessageBodyStyle.Wrapped, 
-            RequestFormat = WebMessageFormat.Json, 
+        [WebInvoke(Method = "POST",
+            UriTemplate = "/Company",
+            RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        string GetCompany(string companyId);
+        Company AddCompany(Company company);
 
+
+        // get http://localhost:52336/CompanyService.svc/CompanyGet/5
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            UriTemplate = "/CompanyGet/{companyId}",
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        Company GetCompanyById(string companyId);
     }
 
 

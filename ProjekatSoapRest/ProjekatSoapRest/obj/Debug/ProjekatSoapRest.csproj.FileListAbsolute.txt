@@ -5,3 +5,10 @@ C:\Users\bosko\Desktop\rad\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatS
 C:\Users\bosko\Desktop\rad\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.csproj.CoreCompileInputs.cache
 C:\Users\bosko\Desktop\rad\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.dll
 C:\Users\bosko\Desktop\rad\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.pdb
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\bin\ProjekatSoapRest.dll.config
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\bin\ProjekatSoapRest.dll
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\bin\ProjekatSoapRest.pdb
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.csproj.AssemblyReference.cache
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.csproj.CoreCompileInputs.cache
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.dll
+C:\Users\bosko\Desktop\SOAP_REST\ProjekatSoapRest\ProjekatSoapRest\obj\Debug\ProjekatSoapRest.pdb

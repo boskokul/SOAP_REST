@@ -8,10 +8,10 @@ using System.Text;
 
 namespace ProjekatSoapRest
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class CompanyService : ICompanyService
     {
+        // trenutno in-memory baza, to jest samo staticka lista kompanija
+        static List<Company> companyList = new List<Company>();
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -30,12 +30,15 @@ namespace ProjekatSoapRest
             return composite;
         }
 
-        public string GetCompany(string companyId)
+        public Company AddCompany(Company company)
         {
-            string res = "radi evo, id komp je " + companyId + "!";
-            return res;
+            companyList.Add(company);
+            return company;
         }
 
-        
+        public Company GetCompanyById(string companyId)
+        {
+            return companyList.Find(c => c.Id.ToString().Equals(companyId));
+        }
     }
 }

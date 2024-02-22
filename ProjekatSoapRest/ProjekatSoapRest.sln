@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjekatSoapRest", "ProjekatSoapRest\ProjekatSoapRest.csproj", "{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {702C2407-F3B6-401A-BF77-F3F5463953ED}
+	EndGlobalSection
+EndGlobal

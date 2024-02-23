@@ -9,7 +9,7 @@ using System.Text;
 namespace ProjekatSoapRest
 {
     [ServiceContract]
-    public interface ICompanyService
+    public interface ICompanyServiceRest
     {
 
         [OperationContract]
@@ -28,10 +28,10 @@ namespace ProjekatSoapRest
         Company AddCompany(Company company);
 
 
-        // get http://localhost:52336/CompanyService.svc/CompanyGet/5
+        // get http://localhost:52336/CompanyService.svc/Company/5
         [OperationContract]
         [WebInvoke(Method = "GET",
-            UriTemplate = "/CompanyGet/{companyId}",
+            UriTemplate = "/Company/{companyId}",
             BodyStyle = WebMessageBodyStyle.Wrapped,
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]

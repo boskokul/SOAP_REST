@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ProjekatSoapRest
 {
-    public class CompanyService : ICompanyService
+    public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap
     {
         // trenutno in-memory baza, to jest samo staticka lista kompanija
         static List<Company> companyList = new List<Company>();

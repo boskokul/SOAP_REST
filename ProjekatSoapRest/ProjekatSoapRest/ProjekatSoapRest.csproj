@@ -70,7 +70,8 @@
       <DependentUpon>CompanyService.svc</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
-    <Compile Include="ICompanyService.cs" />
+    <Compile Include="ICompanyServiceSoap.cs" />
+    <Compile Include="ICompanyServiceRest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

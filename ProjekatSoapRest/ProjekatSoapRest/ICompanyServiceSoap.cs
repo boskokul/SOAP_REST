@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Text;
+
+namespace ProjekatSoapRest
+{
+    [ServiceContract]
+    public interface ICompanyServiceSoap
+    {
+
+        [OperationContract]
+        string GetData(int value);
+
+        [OperationContract]
+        CompositeType GetDataUsingDataContract(CompositeType composite);
+
+        // post http://localhost:52336/CompanyService.svc/Company
+        // primer jsona za ovaj post: {"Id":"5","Name":"PepsiCo", "Departments":["Tehnoloski", "Prodajni"], "Employees":[{"JMBG":"12", "FirstName":"Marko", "LastName":"Markovic", "Email":"markoni@gmail.com", "DeservesRaise":false, "DateOfBirth":"2017-09-08 11:20:12"}]}
+        [OperationContract]
+        Company AddCompany(Company company);
+
+
+        // get http://localhost:52336/CompanyService.svc/Company/5
+        [OperationContract]
+        Company GetCompanyById(string companyId);
+    }
+
+
+}

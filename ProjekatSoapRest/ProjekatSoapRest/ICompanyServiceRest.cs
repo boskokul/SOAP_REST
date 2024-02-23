@@ -11,13 +11,6 @@ namespace ProjekatSoapRest
     [ServiceContract]
     public interface ICompanyServiceRest
     {
-
-        [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
         // post http://localhost:52336/CompanyService.svc/Company
         // primer jsona za ovaj post: {"Id":"5","Name":"PepsiCo", "Departments":["Tehnoloski", "Prodajni"], "Employees":[{"JMBG":"12", "FirstName":"Marko", "LastName":"Markovic", "Email":"markoni@gmail.com", "DeservesRaise":false, "DateOfBirth":"2017-09-08 11:20:12"}]}
         [OperationContract]
@@ -25,7 +18,7 @@ namespace ProjekatSoapRest
             UriTemplate = "/Company",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        Company AddCompany(Company company);
+        Company AddCompanyRest(Company company);
 
 
         // get http://localhost:52336/CompanyService.svc/Company/5
@@ -35,9 +28,8 @@ namespace ProjekatSoapRest
             BodyStyle = WebMessageBodyStyle.Wrapped,
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
-        Company GetCompanyById(string companyId);
+        Company GetCompanyByIdRest(string companyId);
     }
-
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]

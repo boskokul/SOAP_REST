@@ -30,15 +30,34 @@ namespace ProjekatSoapRest
             return composite;
         }
 
-        public Company AddCompany(Company company)
+        private Company addCompany(Company company)
         {
             companyList.Add(company);
             return company;
         }
 
-        public Company GetCompanyById(string companyId)
+        private Company getCompanyById(string companyId)
         {
             return companyList.Find(c => c.Id.ToString().Equals(companyId));
+        }
+        public Company AddCompanySoap(Company company)
+        {
+            return addCompany(company);
+        }
+
+        public Company GetCompanyByIdSoap(string companyId)
+        {
+            return getCompanyById(companyId);
+        }
+
+        public Company AddCompanyRest(Company company)
+        {
+            return addCompany(company);
+        }
+
+        public Company GetCompanyByIdRest(string companyId)
+        {
+            return getCompanyById(companyId);
         }
     }
 }

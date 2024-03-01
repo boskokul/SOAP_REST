@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\service\\interface\\icompanyservicesoap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\service\\interface\\icompanyservicesoap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\model\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\model\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\service\\concrete\\companyservice.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\projekatsoaprest\\service\\concrete\\companyservice.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\service\\concrete\\companyservice.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\service\\interface\\icompanyservicerest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\data\\companies.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\data\\companies.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\projekatsoaprest\\model\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\model\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\projekatsoaprest\\service\\interface\\icompanyservicerest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\service\\interface\\icompanyservicerest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\projekatsoaprest\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\projekatsoaprest\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|c:\\users\\bosko\\desktop\\rad\\drugaiter\\soap_rest\\projekatsoaprest\\projekatsoaprest\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\projekatsoaprest\\service\\interface\\icompanyservicesoap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}|ProjekatSoapRest\\ProjekatSoapRest.csproj|solutionrelative:projekatsoaprest\\service\\interface\\icompanyservicesoap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,26 +46,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "companies.xml",
+              "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Data\\companies.xml",
+              "RelativeDocumentMoniker": "ProjekatSoapRest\\Data\\companies.xml",
+              "ToolTip": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Data\\companies.xml",
+              "RelativeToolTip": "ProjekatSoapRest\\Data\\companies.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-03-01T20:02:52.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CompanyService.svc.cs",
               "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Service\\Concrete\\CompanyService.svc.cs",
               "RelativeDocumentMoniker": "ProjekatSoapRest\\Service\\Concrete\\CompanyService.svc.cs",
               "ToolTip": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Service\\Concrete\\CompanyService.svc.cs",
               "RelativeToolTip": "ProjekatSoapRest\\Service\\Concrete\\CompanyService.svc.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwCoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T19:03:44.395Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Model\\Company.cs",
+              "RelativeDocumentMoniker": "ProjekatSoapRest\\Model\\Company.cs",
+              "ToolTip": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Model\\Company.cs",
+              "RelativeToolTip": "ProjekatSoapRest\\Model\\Company.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T21:21:24.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ICompanyServiceRest.cs",
               "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Service\\Interface\\ICompanyServiceRest.cs",
               "RelativeDocumentMoniker": "ProjekatSoapRest\\Service\\Interface\\ICompanyServiceRest.cs",
               "ToolTip": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Service\\Interface\\ICompanyServiceRest.cs",
               "RelativeToolTip": "ProjekatSoapRest\\Service\\Interface\\ICompanyServiceRest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-22T19:08:08.177Z",
               "EditorCaption": ""
@@ -81,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "ICompanyServiceSoap.cs",
               "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Service\\Interface\\ICompanyServiceSoap.cs",
               "RelativeDocumentMoniker": "ProjekatSoapRest\\Service\\Interface\\ICompanyServiceSoap.cs",
@@ -89,25 +119,11 @@
               "RelativeToolTip": "ProjekatSoapRest\\Service\\Interface\\ICompanyServiceSoap.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T07:50:38.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T07:50:38.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Company.cs",
-              "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Model\\Company.cs",
-              "RelativeDocumentMoniker": "ProjekatSoapRest\\Model\\Company.cs",
-              "ToolTip": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Model\\Company.cs",
-              "RelativeToolTip": "ProjekatSoapRest\\Model\\Company.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T21:21:24.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\bosko\\Desktop\\rad\\drugaIter\\SOAP_REST\\ProjekatSoapRest\\ProjekatSoapRest\\Model\\Employee.cs",
               "RelativeDocumentMoniker": "ProjekatSoapRest\\Model\\Employee.cs",

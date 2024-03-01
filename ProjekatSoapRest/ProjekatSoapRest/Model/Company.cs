@@ -15,6 +15,15 @@ namespace ProjekatSoapRest
         [DataMember]
         public List<Employee> Employees { get; set; }
 
-       
+        public bool ValidateDepartments()
+        {
+            HashSet<string> deparmentNames = new HashSet<string>(Departments.ConvertAll(d => d.ToLower()));
+            if (deparmentNames.Count != Departments.Count)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

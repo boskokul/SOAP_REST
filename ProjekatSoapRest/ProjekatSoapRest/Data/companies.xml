@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCompany xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Company>
+    <Id>2</Id>
+    <Name>firma2</Name>
+    <Departments>
+      <string>departman1</string>
+      <string>departman2</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>1230433</JMBG>
+        <FirstName>Marko</FirstName>
+        <LastName>Markovic</LastName>
+        <Email>mare@gmail.com</Email>
+        <FormattedDateTime>2016-04-04 11:21:13</FormattedDateTime>
+        <DateOfBirth>2016-04-04T11:21:13</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>5</Id>
+    <Name>firmaNeka</Name>
+    <Departments>
+      <string>d23</string>
+    </Departments>
+    <Employees />
+  </Company>
+</ArrayOfCompany>

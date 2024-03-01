@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.IO;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace ProjekatSoapRest
 {
@@ -7,33 +11,68 @@ namespace ProjekatSoapRest
     {
         // trenutno in-memory baza, to jest samo staticka lista kompanija
         static List<Company> companyList = new List<Company>();
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
+        static List<Employee> employeeList = new List<Employee>();
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<Company> GetCompanies()
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            var mySerializer = new XmlSerializer(typeof(List<Company>));
+            // To read the file, create a FileStream.
+            var myFileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml", FileMode.Open);
+            // Call the Deserialize method and cast to the object type.
+            List<Company> companies = (List<Company>)mySerializer.Deserialize(myFileStream);
+            myFileStream.Close();
+            return companies;
         }
 
         private Company addCompany(Company company)
         {
+            if (!checkUniqueName(company))
+            {
+                return null;
+            }
+            
+            if (!company.ValidateDepartments())
+            {
+                return null;
+            }
+
+            if (!checkUniqueEmployee(company))
+            {
+                return null;
+            }
+            companyList = GetCompanies();
             companyList.Add(company);
+            employeeList.AddRange(company.Employees);
+            System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(companyList.GetType());
+            StreamWriter myWriter = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml");
+            x.Serialize(myWriter, companyList);
+            myWriter.Close();
             return company;
+        }
+        private bool checkUniqueEmployee(Company company)
+        {
+            foreach (Employee employee in company.Employees)
+            {
+                if (employeeList.Exists(e => e.JMBG == employee.JMBG && !e.FirstName.Equals(employee.FirstName) && !e.LastName.Equals(employee.LastName)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool checkUniqueName(Company company)
+        {
+            if (companyList.Exists(c => c.Name == company.Name))
+            {
+                return false;
+            }
+            return true;
         }
 
         private Company getCompanyById(string companyId)
         {
-            return companyList.Find(c => c.Id.ToString().Equals(companyId));
+            var companies = GetCompanies();
+            return companies.Find(c => c.Id.ToString().Equals(companyId));
         }
         public Company AddCompanySoap(Company company)
         {

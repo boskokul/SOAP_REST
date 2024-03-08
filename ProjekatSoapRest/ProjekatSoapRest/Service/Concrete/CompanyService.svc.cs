@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.IO;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace ProjekatSoapRest
@@ -11,7 +9,6 @@ namespace ProjekatSoapRest
     {
         // trenutno in-memory baza, to jest samo staticka lista kompanija
         static List<Company> companyList = new List<Company>();
-        static List<Employee> employeeList = new List<Employee>();
 
         public List<Company> GetCompanies()
         {
@@ -36,26 +33,30 @@ namespace ProjekatSoapRest
                 return null;
             }
 
-            if (!checkUniqueEmployee(company))
+            if (!checkUniqueEmployee(company.Employees))
             {
                 return null;
             }
             companyList = GetCompanies();
             companyList.Add(company);
-            employeeList.AddRange(company.Employees);
-            System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(companyList.GetType());
+            XmlSerializer x = new XmlSerializer(companyList.GetType());
             StreamWriter myWriter = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml");
             x.Serialize(myWriter, companyList);
             myWriter.Close();
             return company;
         }
-        private bool checkUniqueEmployee(Company company)
+
+        //malo neefikasno algoritamski
+        private bool checkUniqueEmployee(List<Employee> employees)
         {
-            foreach (Employee employee in company.Employees)
+            foreach (Employee employee in employees)
             {
-                if (employeeList.Exists(e => e.JMBG == employee.JMBG && !e.FirstName.Equals(employee.FirstName) && !e.LastName.Equals(employee.LastName)))
+                foreach(Company company in companyList)
                 {
-                    return false;
+                    if (company.Employees.Exists(e => e.JMBG == employee.JMBG && !e.FirstName.Equals(employee.FirstName) && !e.LastName.Equals(employee.LastName)))
+                    {
+                        return false;
+                    }
                 }
             }
             return true;

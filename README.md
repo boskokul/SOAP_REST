@@ -1,15 +1,19 @@
 
-adding company using rest
-![a1](https://github.com/boskokul/SOAP_REST/assets/116630727/a8557543-8eed-404f-ae39-3ec869f74944)
+testing validation rule same jmbg different names:
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/55d92f75-7162-432b-8bcb-61934f8dd1f9)
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/1948e860-c676-4b29-a28d-a53628f14716)
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/8e4490bc-a5aa-49bb-8e28-610fb0f840fe)
 
-getting company by id using rest
+testing validation no name:
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/533fab4d-ef7e-4269-80a2-2f51e42caf3b)
 
-![a2](https://github.com/boskokul/SOAP_REST/assets/116630727/d8ce578f-3c23-45ed-a097-8a1a0435850a)
-![a3](https://github.com/boskokul/SOAP_REST/assets/116630727/f5644bf7-a88b-495f-a57c-2c16b0ae1a2b)
 
-adding company using soap
-![a4](https://github.com/boskokul/SOAP_REST/assets/116630727/fa00d255-c48b-43e0-9828-28a060b8cd1a)
+testing same departments:
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/170f3e99-4329-4090-bd91-d1f94f04c97b)
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/b3128e89-ced4-4f2f-8874-84d29a17e646)
 
-getting company by id using soap
-![a5](https://github.com/boskokul/SOAP_REST/assets/116630727/6df65b3a-62aa-487b-ade8-3b65cf535e12)
-![a6](https://github.com/boskokul/SOAP_REST/assets/116630727/3ebe4f7f-ba2d-4abc-a29c-d33d21804690)
+testing same name company:
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/bb391024-6433-41de-98ab-ccd0e7442f5d)
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/93adc1e2-f7e0-4743-b01b-f8d18bb1c958)
+![image](https://github.com/boskokul/SOAP_REST/assets/116630727/307814b9-517f-45c3-8c1f-1a0c9cf7966a)
+

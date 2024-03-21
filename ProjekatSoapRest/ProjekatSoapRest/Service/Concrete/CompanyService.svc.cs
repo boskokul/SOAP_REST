@@ -11,9 +11,7 @@ namespace ProjekatSoapRest
         public List<Company> GetCompanies()
         {
             var mySerializer = new XmlSerializer(typeof(List<Company>));
-            
             var myFileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml", FileMode.Open);
-            
             List<Company> companies = (List<Company>)mySerializer.Deserialize(myFileStream);
             myFileStream.Close();
             return companies;
@@ -61,7 +59,12 @@ namespace ProjekatSoapRest
 
         public bool Validate(Company company)
         {
-            if(!company.Validate())
+            List<Company> companies = GetCompanies();
+            if (companies.Find(c => c.Id.ToString().Equals(company.Id)) != null)
+            {
+                return false;
+            }
+            if (!company.Validate())
             {
                 return false;
             }
@@ -69,7 +72,7 @@ namespace ProjekatSoapRest
             {
                 return false;
             }
-            if (!checkUniqueName(company) || !checkUniqueEmployee(company.Employees))
+            if (!checkUniqueName(company, companies) || !checkUniqueEmployee(company.Employees, companies))
             {
                 return false;
             }
@@ -86,20 +89,16 @@ namespace ProjekatSoapRest
             }
             return true;
         }
-        private bool checkUniqueName(Company company)
+        private bool checkUniqueName(Company company, List<Company> companies)
         {
-            List<Company> companies = GetCompanies();
             if (companies.Exists(c => c.Name == company.Name))
             {
                 return false;
             }
             return true;
         }
-
-        //malo neefikasno algoritamski
-        private bool checkUniqueEmployee(List<Employee> employees)
+        private bool checkUniqueEmployee(List<Employee> employees, List<Company> companies)
         {
-            List<Company> companies = GetCompanies();
             foreach (Employee employee in employees)
             {
                 foreach (Company company in companies)

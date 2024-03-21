@@ -9,7 +9,7 @@
     </Departments>
     <Employees>
       <Employee>
-        <JMBG>1230433</JMBG>
+        <JMBG>1234567</JMBG>
         <FirstName>Marko</FirstName>
         <LastName>Markovic</LastName>
         <Email>mare@gmail.com</Email>
@@ -34,6 +34,83 @@
         <Email>nikica@gmail.com</Email>
         <FormattedDateTime>2000-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>2000-11-11T11:11:11</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>true</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>4</Id>
+    <Name>PepsiCo</Name>
+    <Departments>
+      <string>Tehnoloski</string>
+      <string>Prodajni</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>3343354</JMBG>
+        <FirstName>Marko</FirstName>
+        <LastName>Markovic</LastName>
+        <Email>markoni@gmail.com</Email>
+        <FormattedDateTime>2017-09-08 11:20:12</FormattedDateTime>
+        <DateOfBirth>2017-09-08T11:20:12</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>11</Id>
+    <Name>NovaFirma</Name>
+    <Departments>
+      <string>JedanDepartman</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>324354</JMBG>
+        <FirstName>Ilija</FirstName>
+        <LastName>Savic</LastName>
+        <Email>niki@gmail.com</Email>
+        <FormattedDateTime>2003-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>2003-11-11T11:11:11</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>true</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>18</Id>
+    <Name>IstaFirma</Name>
+    <Departments>
+      <string>Departman12</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>24354546</JMBG>
+        <FirstName>Nenad</FirstName>
+        <LastName>Simic</LastName>
+        <Email>autp@gmail.com</Email>
+        <FormattedDateTime>1993-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>1993-11-11T11:11:11</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>true</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>23</Id>
+    <Name>IstaFirmaViseNe</Name>
+    <Departments>
+      <string>Departman122</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>3454534</JMBG>
+        <FirstName>Petar</FirstName>
+        <LastName>Kukic</LastName>
+        <Email>gega@gmail.com</Email>
+        <FormattedDateTime>1998-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>1998-11-11T11:11:11</DateOfBirth>
         <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>

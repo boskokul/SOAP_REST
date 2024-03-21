@@ -1,21 +1,19 @@
-﻿using System;
+﻿using ProjekatSoapRest.Service.Interface;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
 namespace ProjekatSoapRest
 {
-    public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap
+    public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap, IValidator
     {
-        // trenutno in-memory baza, to jest samo staticka lista kompanija
-        static List<Company> companyList = new List<Company>();
-
         public List<Company> GetCompanies()
         {
             var mySerializer = new XmlSerializer(typeof(List<Company>));
-            // To read the file, create a FileStream.
+            
             var myFileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml", FileMode.Open);
-            // Call the Deserialize method and cast to the object type.
+            
             List<Company> companies = (List<Company>)mySerializer.Deserialize(myFileStream);
             myFileStream.Close();
             return companies;
@@ -23,51 +21,17 @@ namespace ProjekatSoapRest
 
         private Company addCompany(Company company)
         {
-            if (!checkUniqueName(company))
+            if (!Validate(company))
             {
                 return null;
             }
-            
-            if (!company.ValidateDepartments())
-            {
-                return null;
-            }
-
-            if (!checkUniqueEmployee(company.Employees))
-            {
-                return null;
-            }
-            companyList = GetCompanies();
-            companyList.Add(company);
-            XmlSerializer x = new XmlSerializer(companyList.GetType());
+            List<Company> companies = GetCompanies();
+            companies.Add(company);
+            XmlSerializer x = new XmlSerializer(companies.GetType());
             StreamWriter myWriter = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml");
-            x.Serialize(myWriter, companyList);
+            x.Serialize(myWriter, companies);
             myWriter.Close();
             return company;
-        }
-
-        //malo neefikasno algoritamski
-        private bool checkUniqueEmployee(List<Employee> employees)
-        {
-            foreach (Employee employee in employees)
-            {
-                foreach(Company company in companyList)
-                {
-                    if (company.Employees.Exists(e => e.JMBG == employee.JMBG && !e.FirstName.Equals(employee.FirstName) && !e.LastName.Equals(employee.LastName)))
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-        private bool checkUniqueName(Company company)
-        {
-            if (companyList.Exists(c => c.Name == company.Name))
-            {
-                return false;
-            }
-            return true;
         }
 
         private Company getCompanyById(string companyId)
@@ -93,6 +57,60 @@ namespace ProjekatSoapRest
         public Company GetCompanyByIdRest(string companyId)
         {
             return getCompanyById(companyId);
+        }
+
+        public bool Validate(Company company)
+        {
+            if(!company.Validate())
+            {
+                return false;
+            }
+            if (!validateEmpolyees(company.Employees))
+            {
+                return false;
+            }
+            if (!checkUniqueName(company) || !checkUniqueEmployee(company.Employees))
+            {
+                return false;
+            }
+                return true;
+        }
+        private bool validateEmpolyees(List<Employee> employees)
+        {
+            foreach (Employee employee in employees)
+            {
+                if (!employee.Validate())
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool checkUniqueName(Company company)
+        {
+            List<Company> companies = GetCompanies();
+            if (companies.Exists(c => c.Name == company.Name))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //malo neefikasno algoritamski
+        private bool checkUniqueEmployee(List<Employee> employees)
+        {
+            List<Company> companies = GetCompanies();
+            foreach (Employee employee in employees)
+            {
+                foreach (Company company in companies)
+                {
+                    if (company.Employees.Exists(e => e.JMBG == employee.JMBG && !e.FirstName.Equals(employee.FirstName) && !e.LastName.Equals(employee.LastName)))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }

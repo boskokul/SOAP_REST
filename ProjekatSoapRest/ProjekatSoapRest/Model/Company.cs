@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace ProjekatSoapRest
@@ -15,10 +16,27 @@ namespace ProjekatSoapRest
         [DataMember]
         public List<Employee> Employees { get; set; }
 
+
+        public bool Validate()
+        {
+            if (String.IsNullOrEmpty(Name) || Departments == null ||  Employees == null)
+            {
+                return false;
+            }
+            else if(Departments.Count == 0 || Employees.Count == 0 || !ValidateDepartments())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public bool ValidateDepartments()
         {
-            HashSet<string> deparmentNames = new HashSet<string>(Departments.ConvertAll(d => d.ToLower()));
-            if (deparmentNames.Count != Departments.Count)
+            HashSet<string> uniqueDeparmentNames = new HashSet<string>(Departments.ConvertAll(d => d.ToLower()));
+            if (uniqueDeparmentNames.Count != Departments.Count)
             {
                 return false;
             }

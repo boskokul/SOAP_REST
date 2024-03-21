@@ -74,6 +74,7 @@
     <Compile Include="Service\Interface\ICompanyServiceSoap.cs" />
     <Compile Include="Service\Interface\ICompanyServiceRest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Interface\IValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -25,5 +25,17 @@ namespace ProjekatSoapRest
         public DateTime MyDateTime { get; set; }
         [DataMember]
         public bool DeservesRaise { get; set; }
+
+        public bool Validate()
+        {
+            if(String.IsNullOrEmpty(FirstName) || String.IsNullOrEmpty(LastName) || String.IsNullOrEmpty(Email) || DateOfBirth == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

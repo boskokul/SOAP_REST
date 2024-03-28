@@ -116,4 +116,42 @@
       </Employee>
     </Employees>
   </Company>
+  <Company>
+    <Id>17</Id>
+    <Name>FIRMA7</Name>
+    <Departments>
+      <string>DepartmanNeki</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>1234569</JMBG>
+        <FirstName>Mitar</FirstName>
+        <LastName>Mitrovic</LastName>
+        <Email>ni@gmail.com</Email>
+        <FormattedDateTime>2005-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>2005-11-11T11:11:11</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>true</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>117</Id>
+    <Name>FIRMA117</Name>
+    <Departments>
+      <string>DepartmanNeki</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>11111122</JMBG>
+        <FirstName>Branko</FirstName>
+        <LastName>Brankovic</LastName>
+        <Email>ni12@gmail.com</Email>
+        <FormattedDateTime>2001-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>2001-11-11T11:11:11</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>true</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
 </ArrayOfCompany>

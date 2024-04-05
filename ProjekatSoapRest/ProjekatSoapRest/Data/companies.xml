@@ -154,4 +154,24 @@
       </Employee>
     </Employees>
   </Company>
+  <Company>
+    <Id>15</Id>
+    <Name>Chipsy</Name>
+    <Departments>
+      <string>Tehnoloski</string>
+      <string>Prodajni</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>13432</JMBG>
+        <FirstName>Marko</FirstName>
+        <LastName>Markovic</LastName>
+        <Email>markoni7@gmail.com</Email>
+        <FormattedDateTime>2017-04-08 11:20:12</FormattedDateTime>
+        <DateOfBirth>2017-04-08T11:20:12</DateOfBirth>
+        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
 </ArrayOfCompany>

@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.ServiceModel.Web;
 using System.Xml.Serialization;
 
@@ -9,121 +11,110 @@ namespace ProjekatSoapRest
 {
     public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap, IValidator
     {
-        private List<Company> getCompanies()
+        private string FilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/", "companies.xml");
+
+        private List<Company> GetCompanies()
         {
-            var mySerializer = new XmlSerializer(typeof(List<Company>));
-            var myFileStream = new FileStream(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml", FileMode.Open);
-            List<Company> companies = (List<Company>)mySerializer.Deserialize(myFileStream);
-            myFileStream.Close();
-            return companies;
+            var serializer = new XmlSerializer(typeof(List<Company>));
+                using (var fileStream = new FileStream(FilePath, FileMode.Open))
+                {
+                    return (List<Company>)serializer.Deserialize(fileStream);
+                }
         }
 
-        private Company addCompany(Company company)
+        private Company AddCompany(Company company)
         {
-            WebOperationContext ctx = WebOperationContext.Current;
-            if (!Validate(company))
+            var companies = GetCompanies();
+            if (!ValidateCompany(company, companies))
             {
-                ctx.OutgoingResponse.StatusCode = System.Net.HttpStatusCode.BadRequest;
+                SetResponseStatus(HttpStatusCode.BadRequest);
                 return null;
             }
-            List<Company> companies = getCompanies();
             companies.Add(company);
-            XmlSerializer x = new XmlSerializer(companies.GetType());
-            StreamWriter myWriter = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "/Data/companies.xml");
-            x.Serialize(myWriter, companies);
-            myWriter.Close();
-            ctx.OutgoingResponse.StatusCode = System.Net.HttpStatusCode.OK;
+            SaveCompanies(companies);
+            SetResponseStatus(HttpStatusCode.OK);
             return company;
         }
 
-        private Company getCompanyById(string companyId)
+        private void SaveCompanies(List<Company> companies)
         {
-            var company = getCompanies().Find(c => c.Id.ToString().Equals(companyId));
+            var serializer = new XmlSerializer(companies.GetType());
+            using (var writer = new StreamWriter(FilePath))
+            {
+                serializer.Serialize(writer, companies);
+            }
+        }
+
+        private void SetResponseStatus(HttpStatusCode statusCode)
+        {
+            WebOperationContext.Current.OutgoingResponse.StatusCode = statusCode;
+        }
+
+        private Company GetCompanyById(string companyId)
+        {
+            var company = GetCompanies().Find(c => c.Id.ToString().Equals(companyId));
             WebOperationContext ctx = WebOperationContext.Current;
             if(company != null)
             {
-                ctx.OutgoingResponse.StatusCode = System.Net.HttpStatusCode.OK;
+                ctx.OutgoingResponse.StatusCode = HttpStatusCode.OK;
             }
             else
             {
-                ctx.OutgoingResponse.StatusCode = System.Net.HttpStatusCode.NotFound;
+                ctx.OutgoingResponse.StatusCode = HttpStatusCode.NotFound;
             }
             return company;
-
         }
         public Company AddCompanySoap(Company company)
         {
-            return addCompany(company);
+            return AddCompany(company);
         }
 
         public Company GetCompanyByIdSoap(string companyId)
         {
-            return getCompanyById(companyId);
+            return GetCompanyById(companyId);
         }
 
         public Company AddCompanyRest(Company company)
         {
-            return addCompany(company);
+            return AddCompany(company);
         }
 
         public Company GetCompanyByIdRest(string companyId)
         {
-            return getCompanyById(companyId);
+            return GetCompanyById(companyId);
         }
 
         public bool Validate(Company company)
         {
-            List<Company> companies = getCompanies();
-            if (companies.Find(c => c.Id.ToString().Equals(company.Id)) != null)
-            {
-                return false;
-            }
-            if (!company.Validate())
-            {
-                return false;
-            }
-            if (!validateEmpolyees(company.Employees))
-            {
-                return false;
-            }
-            if (!checkUniqueName(company, companies) || !checkUniqueEmployee(company.Employees, companies))
-            {
-                return false;
-            }
-                return true;
+            return ValidateCompany(company, GetCompanies());
         }
-        private bool validateEmpolyees(List<Employee> employees)
+
+        private bool ValidateCompany(Company company, List<Company> existingCompanies)
         {
-            foreach (Employee employee in employees)
+            if (existingCompanies.Any(c => c.Id.ToString().Equals(company.Id)))
             {
-                if (!employee.Validate())
-                {
-                    return false;
-                }
+                return false;
             }
-            return true;
-        }
-        private bool checkUniqueName(Company company, List<Company> companies)
-        {
-            if (companies.Exists(c => c.Name == company.Name))
+            if (!company.Validate() || !ValidateEmpolyees(company.Employees) || !IsUniqueName(company, existingCompanies) || !IsUniqueEmployee(company.Employees,existingCompanies))
             {
                 return false;
             }
             return true;
         }
-        private bool checkUniqueEmployee(List<Employee> employees, List<Company> companies)
+
+        private bool ValidateEmpolyees(List<Employee> employees)
         {
-            foreach (Employee employee in employees)
-            {
-                foreach (Company company in companies)
-                {
-                    if (company.Employees.Exists(e => e.JMBG == employee.JMBG && !e.FirstName.Equals(employee.FirstName) && !e.LastName.Equals(employee.LastName)))
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
+            return employees.All(employee => employee.Validate());
+        }
+
+        private bool IsUniqueName(Company company, List<Company> existingCompanies)
+        {
+        	return !existingCompanies.Exists(c => c.Name == company.Name);
+        }
+
+        private bool IsUniqueEmployee(List<Employee> employees, List<Company> existingCompanies)
+        {
+        	return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG || e.FirstName == employee.FirstName || e.LastName==employee.LastName)));
         }
     }
 }

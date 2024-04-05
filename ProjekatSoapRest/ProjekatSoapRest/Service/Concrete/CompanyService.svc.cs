@@ -114,7 +114,7 @@ namespace ProjekatSoapRest
 
         private bool IsUniqueEmployee(List<Employee> employees, List<Company> existingCompanies)
         {
-        	return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG || e.FirstName == employee.FirstName || e.LastName==employee.LastName)));
+        	return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG && (e.FirstName != employee.FirstName || e.LastName != employee.LastName))));
         }
     }
 }

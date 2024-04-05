@@ -22,20 +22,12 @@ namespace ProjekatSoapRest
             set => DateOfBirth = DateTime.ParseExact(value, "yyyy-MM-dd hh:mm:ss", CultureInfo.CurrentCulture);
         }
         public DateTime DateOfBirth { get; set; }
-        public DateTime MyDateTime { get; set; }
         [DataMember]
         public bool DeservesRaise { get; set; }
 
         public bool Validate()
         {
-            if(String.IsNullOrEmpty(FirstName) || String.IsNullOrEmpty(LastName) || String.IsNullOrEmpty(Email) || DateOfBirth == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return !(String.IsNullOrEmpty(FirstName) || String.IsNullOrEmpty(LastName) || String.IsNullOrEmpty(Email) || DateOfBirth == default(DateTime));
         }
     }
 }

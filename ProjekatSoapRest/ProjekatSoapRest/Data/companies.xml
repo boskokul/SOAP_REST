@@ -15,7 +15,6 @@
         <Email>mare@gmail.com</Email>
         <FormattedDateTime>2016-04-04 11:21:13</FormattedDateTime>
         <DateOfBirth>2016-04-04T11:21:13</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>false</DeservesRaise>
       </Employee>
     </Employees>
@@ -34,7 +33,6 @@
         <Email>nikica@gmail.com</Email>
         <FormattedDateTime>2000-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>2000-11-11T11:11:11</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
@@ -54,7 +52,6 @@
         <Email>markoni@gmail.com</Email>
         <FormattedDateTime>2017-09-08 11:20:12</FormattedDateTime>
         <DateOfBirth>2017-09-08T11:20:12</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>false</DeservesRaise>
       </Employee>
     </Employees>
@@ -73,7 +70,6 @@
         <Email>niki@gmail.com</Email>
         <FormattedDateTime>2003-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>2003-11-11T11:11:11</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
@@ -92,7 +88,6 @@
         <Email>autp@gmail.com</Email>
         <FormattedDateTime>1993-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>1993-11-11T11:11:11</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
@@ -111,7 +106,6 @@
         <Email>gega@gmail.com</Email>
         <FormattedDateTime>1998-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>1998-11-11T11:11:11</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
@@ -130,7 +124,6 @@
         <Email>ni@gmail.com</Email>
         <FormattedDateTime>2005-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>2005-11-11T11:11:11</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
@@ -149,7 +142,6 @@
         <Email>ni12@gmail.com</Email>
         <FormattedDateTime>2001-11-11 11:11:11</FormattedDateTime>
         <DateOfBirth>2001-11-11T11:11:11</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
         <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
@@ -169,7 +161,63 @@
         <Email>markoni7@gmail.com</Email>
         <FormattedDateTime>2017-04-08 11:20:12</FormattedDateTime>
         <DateOfBirth>2017-04-08T11:20:12</DateOfBirth>
-        <MyDateTime>0001-01-01T00:00:00</MyDateTime>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>151</Id>
+    <Name>Chipsy2</Name>
+    <Departments>
+      <string>Tehnoloski</string>
+      <string>Prodajni</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>1343432</JMBG>
+        <FirstName>Nebojsa</FirstName>
+        <LastName>Markovic</LastName>
+        <Email>markoni7@gmail.com</Email>
+        <FormattedDateTime>2017-07-08 11:20:12</FormattedDateTime>
+        <DateOfBirth>2017-07-08T11:20:12</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>152</Id>
+    <Name>Chipsy3</Name>
+    <Departments>
+      <string>Tehnoloski</string>
+      <string>Prodajni</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>1343299</JMBG>
+        <FirstName>Marko</FirstName>
+        <LastName>Simic</LastName>
+        <Email>markoni7@gmail.com</Email>
+        <FormattedDateTime>2017-04-08 11:20:12</FormattedDateTime>
+        <DateOfBirth>2017-04-08T11:20:12</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>1526</Id>
+    <Name>Chipsy4</Name>
+    <Departments>
+      <string>Tehnoloski</string>
+      <string>Prodajni</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>134327</JMBG>
+        <FirstName>Marko</FirstName>
+        <LastName>Lazic</LastName>
+        <Email>markoni7@gmail.com</Email>
+        <FormattedDateTime>2017-08-08 11:20:12</FormattedDateTime>
+        <DateOfBirth>2017-08-08T11:20:12</DateOfBirth>
         <DeservesRaise>false</DeservesRaise>
       </Employee>
     </Employees>

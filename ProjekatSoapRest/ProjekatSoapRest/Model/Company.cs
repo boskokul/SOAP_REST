@@ -16,32 +16,19 @@ namespace ProjekatSoapRest
         [DataMember]
         public List<Employee> Employees { get; set; }
 
-
         public bool Validate()
         {
-            if (String.IsNullOrEmpty(Name) || Departments == null ||  Employees == null)
-            {
-                return false;
-            }
-            else if(Departments.Count == 0 || Employees.Count == 0 || !ValidateDepartments())
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            if (String.IsNullOrEmpty(Name) || Departments == null || Employees == null || Departments.Count == 0 || Employees.Count == 0 || !ValidateDepartments())
+              {
+                  return false;
+              }
+              return true;
         }
 
         public bool ValidateDepartments()
         {
-            HashSet<string> uniqueDeparmentNames = new HashSet<string>(Departments.ConvertAll(d => d.ToLower()));
-            if (uniqueDeparmentNames.Count != Departments.Count)
-            {
-                return false;
-            }
-            return true;
+            HashSet<string> uniqueDepartmentNames = new HashSet<string>(Departments.ConvertAll(d => d.ToLower()));
+            return uniqueDepartmentNames.Count == Departments.Count;
         }
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace ProjekatSoapRest
@@ -7,7 +8,7 @@ namespace ProjekatSoapRest
     [DataContract]
     public class Company
     {
-        [DataMember]
+        [DataMember, Key]
         public long Id { get; set; }
         [DataMember]
         public string Name { get; set; }

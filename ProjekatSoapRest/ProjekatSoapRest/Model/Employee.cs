@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Runtime.Serialization;
 
@@ -7,7 +8,7 @@ namespace ProjekatSoapRest
     [DataContract]
     public class Employee
     {
-        [DataMember]
+        [DataMember, Key]
         public long JMBG { get; set; }
         [DataMember]
         public string FirstName { get; set; }

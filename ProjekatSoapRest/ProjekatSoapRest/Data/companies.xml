@@ -222,4 +222,22 @@
       </Employee>
     </Employees>
   </Company>
+  <Company>
+    <Id>99</Id>
+    <Name>KompanijeNZM</Name>
+    <Departments>
+      <string>marka</string>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>8882134</JMBG>
+        <FirstName>Niki</FirstName>
+        <LastName>Pilic</LastName>
+        <Email>nidza@gmail.com</Email>
+        <FormattedDateTime>1999-12-12 11:11:11</FormattedDateTime>
+        <DateOfBirth>1999-12-12T11:11:11</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
 </ArrayOfCompany>

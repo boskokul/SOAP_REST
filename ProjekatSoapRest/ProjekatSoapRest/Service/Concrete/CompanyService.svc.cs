@@ -1,6 +1,8 @@
-﻿using ProjekatSoapRest.Service.Interface;
+﻿using ProjekatSoapRest.Data;
+using ProjekatSoapRest.Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -22,8 +24,13 @@ namespace ProjekatSoapRest
                 }
         }
 
+        protected CustomDbContext DbContext;
+        private DbSet<Company> CompaniesDBSet;
+
         private Company AddCompany(Company company)
         {
+            DbContext = new CustomDbContext();
+            CompaniesDBSet = DbContext.Companies;
             var companies = GetCompanies();
             if (!ValidateCompany(company, companies))
             {
@@ -33,6 +40,8 @@ namespace ProjekatSoapRest
             companies.Add(company);
             SaveCompanies(companies);
             SetResponseStatus(HttpStatusCode.OK);
+            CompaniesDBSet.Add(company);
+            DbContext.SaveChanges();
             return company;
         }
 

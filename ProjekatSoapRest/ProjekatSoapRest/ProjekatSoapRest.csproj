@@ -112,12 +112,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CustomDbContext.cs" />
-    <Compile Include="Migrations\202404161040447_InitialCreate.cs" />
-    <Compile Include="Migrations\202404161040447_InitialCreate.Designer.cs">
-      <DependentUpon>202404161040447_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202404181440128_MigracijePrve.cs" />
+    <Compile Include="Migrations\202404181440128_MigracijePrve.Designer.cs">
+      <DependentUpon>202404181440128_MigracijePrve.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\Department.cs" />
     <Compile Include="Service\Concrete\CompanyService.svc.cs">
       <DependentUpon>CompanyService.svc</DependentUpon>
     </Compile>
@@ -140,8 +141,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202404161040447_InitialCreate.resx">
-      <DependentUpon>202404161040447_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202404181440128_MigracijePrve.resx">
+      <DependentUpon>202404181440128_MigracijePrve.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

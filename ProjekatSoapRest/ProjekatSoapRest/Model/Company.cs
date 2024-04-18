@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ProjekatSoapRest.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace ProjekatSoapRest
@@ -8,12 +10,12 @@ namespace ProjekatSoapRest
     [DataContract]
     public class Company
     {
-        [DataMember, Key]
+        [DataMember, Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Id { get; set; }
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public List<string> Departments { get; set; }
+        public List<Department> Departments { get; set; }
         [DataMember]
         public List<Employee> Employees { get; set; }
 
@@ -28,7 +30,7 @@ namespace ProjekatSoapRest
 
         public bool ValidateDepartments()
         {
-            HashSet<string> uniqueDepartmentNames = new HashSet<string>(Departments.ConvertAll(d => d.ToLower()));
+            HashSet<string> uniqueDepartmentNames = new HashSet<string>(Departments.ConvertAll(d => d.Name.ToLower()));
             return uniqueDepartmentNames.Count == Departments.Count;
         }
     }

@@ -3,10 +3,7 @@
   <Company>
     <Id>2</Id>
     <Name>firma2</Name>
-    <Departments>
-      <string>departman1</string>
-      <string>departman2</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>1234567</JMBG>
@@ -22,9 +19,7 @@
   <Company>
     <Id>8</Id>
     <Name>FIRMA8</Name>
-    <Departments>
-      <string>Dep1</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>4323232345</JMBG>
@@ -40,10 +35,7 @@
   <Company>
     <Id>4</Id>
     <Name>PepsiCo</Name>
-    <Departments>
-      <string>Tehnoloski</string>
-      <string>Prodajni</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>3343354</JMBG>
@@ -59,9 +51,7 @@
   <Company>
     <Id>11</Id>
     <Name>NovaFirma</Name>
-    <Departments>
-      <string>JedanDepartman</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>324354</JMBG>
@@ -77,9 +67,7 @@
   <Company>
     <Id>18</Id>
     <Name>IstaFirma</Name>
-    <Departments>
-      <string>Departman12</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>24354546</JMBG>
@@ -95,9 +83,7 @@
   <Company>
     <Id>23</Id>
     <Name>IstaFirmaViseNe</Name>
-    <Departments>
-      <string>Departman122</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>3454534</JMBG>
@@ -113,9 +99,7 @@
   <Company>
     <Id>17</Id>
     <Name>FIRMA7</Name>
-    <Departments>
-      <string>DepartmanNeki</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>1234569</JMBG>
@@ -131,9 +115,7 @@
   <Company>
     <Id>117</Id>
     <Name>FIRMA117</Name>
-    <Departments>
-      <string>DepartmanNeki</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>11111122</JMBG>
@@ -149,10 +131,7 @@
   <Company>
     <Id>15</Id>
     <Name>Chipsy</Name>
-    <Departments>
-      <string>Tehnoloski</string>
-      <string>Prodajni</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>13432</JMBG>
@@ -168,10 +147,7 @@
   <Company>
     <Id>151</Id>
     <Name>Chipsy2</Name>
-    <Departments>
-      <string>Tehnoloski</string>
-      <string>Prodajni</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>1343432</JMBG>
@@ -187,10 +163,7 @@
   <Company>
     <Id>152</Id>
     <Name>Chipsy3</Name>
-    <Departments>
-      <string>Tehnoloski</string>
-      <string>Prodajni</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>1343299</JMBG>
@@ -206,10 +179,7 @@
   <Company>
     <Id>1526</Id>
     <Name>Chipsy4</Name>
-    <Departments>
-      <string>Tehnoloski</string>
-      <string>Prodajni</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>134327</JMBG>
@@ -225,9 +195,7 @@
   <Company>
     <Id>99</Id>
     <Name>KompanijeNZM</Name>
-    <Departments>
-      <string>marka</string>
-    </Departments>
+    <Departments />
     <Employees>
       <Employee>
         <JMBG>8882134</JMBG>
@@ -237,6 +205,115 @@
         <FormattedDateTime>1999-12-12 11:11:11</FormattedDateTime>
         <DateOfBirth>1999-12-12T11:11:11</DateOfBirth>
         <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>76</Id>
+    <Name>Test1CName</Name>
+    <Departments>
+      <Department>
+        <Id>0</Id>
+        <Name>TestDep1</Name>
+      </Department>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>4443331</JMBG>
+        <FirstName>Test1EName</FirstName>
+        <LastName>Test1ELName</LastName>
+        <Email>test1@uns.ac.rs</Email>
+        <FormattedDateTime>2000-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>2000-11-11T11:11:11</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>72</Id>
+    <Name>IMEKOMPNeko</Name>
+    <Departments>
+      <Department>
+        <Id>0</Id>
+        <Name>IMEDEP1</Name>
+      </Department>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>23433111</JMBG>
+        <FirstName>ImeNeko1</FirstName>
+        <LastName>PrezNeko1</LastName>
+        <Email>imejl@gmail.com</Email>
+        <FormattedDateTime>1934-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>1934-11-11T11:11:11</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>44</Id>
+    <Name>TestN2</Name>
+    <Departments>
+      <Department>
+        <Id>0</Id>
+        <Name>TestD2</Name>
+      </Department>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>8734933</JMBG>
+        <FirstName>TestFN2</FirstName>
+        <LastName>TestLN2</LastName>
+        <Email>test2@gmail.com</Email>
+        <FormattedDateTime>1922-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>1922-11-11T11:11:11</DateOfBirth>
+        <DeservesRaise>true</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>86</Id>
+    <Name>TestN3</Name>
+    <Departments>
+      <Department>
+        <Id>0</Id>
+        <Name>TestD3</Name>
+      </Department>
+      <Department>
+        <Id>0</Id>
+        <Name>TestD32</Name>
+      </Department>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>5454332</JMBG>
+        <FirstName>TestFN3</FirstName>
+        <LastName>TestLN3</LastName>
+        <Email>test3@gmail.com</Email>
+        <FormattedDateTime>1977-12-12 10:10:10</FormattedDateTime>
+        <DateOfBirth>1977-12-12T10:10:10</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
+  <Company>
+    <Id>76</Id>
+    <Name>EkijevaFirma</Name>
+    <Departments>
+      <Department>
+        <Id>0</Id>
+        <Name>Dep1</Name>
+      </Department>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>983948</JMBG>
+        <FirstName>Eki</FirstName>
+        <LastName>Ekic</LastName>
+        <Email>eki@gmail.com</Email>
+        <FormattedDateTime>1988-11-12 11:11:11</FormattedDateTime>
+        <DateOfBirth>1988-11-12T11:11:11</DateOfBirth>
+        <DeservesRaise>true</DeservesRaise>
       </Employee>
     </Employees>
   </Company>

@@ -17,3 +17,5 @@ testing same name company:
 ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/93adc1e2-f7e0-4743-b01b-f8d18bb1c958)
 ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/307814b9-517f-45c3-8c1f-1a0c9cf7966a)
 
+Note: Commands in Package Manager Console when no migrations present: Enable-Migrations, Add-Migration MigracijePrve, Update-Database
+

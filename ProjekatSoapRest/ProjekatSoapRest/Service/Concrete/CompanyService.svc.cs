@@ -63,7 +63,10 @@ namespace ProjekatSoapRest
         {
             var company = GetCompanies().Find(c => c.Id.ToString().Equals(companyId));
             WebOperationContext ctx = WebOperationContext.Current;
-            if(company != null)
+            DbContext = new CustomDbContext();
+            CompaniesDBSet = DbContext.Companies;
+            company = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).FirstOrDefault(c => c.Id.ToString() == companyId);
+            if (company != null)
             {
                 ctx.OutgoingResponse.StatusCode = HttpStatusCode.OK;
             }

@@ -7,13 +7,13 @@ namespace ProjekatSoapRest.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class MigracijePrve : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigracijePrve));
         
         string IMigrationMetadata.Id
         {
-            get { return "202404161040447_InitialCreate"; }
+            get { return "202404181440128_MigracijePrve"; }
         }
         
         string IMigrationMetadata.Source

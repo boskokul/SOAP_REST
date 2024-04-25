@@ -1,21 +1,25 @@
-
-testing validation rule same jmbg different names:
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/55d92f75-7162-432b-8bcb-61934f8dd1f9)
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/1948e860-c676-4b29-a28d-a53628f14716)
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/8e4490bc-a5aa-49bb-8e28-610fb0f840fe)
-
-testing validation no name:
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/533fab4d-ef7e-4269-80a2-2f51e42caf3b)
+# **creating new company**
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/cf4368b9-e153-493e-a87c-8808c53c16db)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/56a07c30-841b-48b2-ba88-d3da727be15b)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/3c3b11bf-5b4e-486b-973b-f0eae2c90f6b)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/b51d6d00-d9a6-4611-b2e0-28376855f3bc)
 
 
-testing same departments:
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/170f3e99-4329-4090-bd91-d1f94f04c97b)
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/b3128e89-ced4-4f2f-8874-84d29a17e646)
+# **getting the company after create**
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/7c0eb464-2dbd-44ea-a2e5-103207dce353)
 
-testing same name company:
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/bb391024-6433-41de-98ab-ccd0e7442f5d)
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/93adc1e2-f7e0-4743-b01b-f8d18bb1c958)
-![image](https://github.com/boskokul/SOAP_REST/assets/116630727/307814b9-517f-45c3-8c1f-1a0c9cf7966a)
+
+# **updating the company**
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/de1fd2c4-a2ac-4c6d-b172-c34515ee9dde)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/66bd51d7-aa97-4233-8fd1-e2494672bf0e)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/860d0f9e-d384-43aa-b9f0-a416518c116a)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/5ae51040-00d5-4d9c-83e2-a68af76aac78)
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/3343f9a0-d780-4dc4-b802-ef5b78acb383)
+
+# **getting the company after update**
+  ![image](https://github.com/boskokul/SOAP_REST/assets/116630727/f9f5ce62-0f34-4bde-8405-da0062019d98)
+
+
 
 Note: Commands in Package Manager Console when no migrations present: Enable-Migrations, Add-Migration MigracijePrve, Update-Database
 

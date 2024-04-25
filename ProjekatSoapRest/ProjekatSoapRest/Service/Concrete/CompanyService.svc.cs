@@ -3,7 +3,6 @@ using ProjekatSoapRest.Model;
 using ProjekatSoapRest.Service.Interface;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -15,17 +14,17 @@ namespace ProjekatSoapRest
 {
     public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap, IValidator
     {
+        private CustomDbContext DbContext;
+        private DbSet<Company> CompaniesDBSet;
+        private DbSet<Employee> EmployeeDBSet;
+        private DbSet<Department> DepartmentsDBSet;
+
         public CompanyService() {
             DbContext = new CustomDbContext();
             CompaniesDBSet = DbContext.Companies;
             EmployeeDBSet = DbContext.Employees;
             DepartmentsDBSet = DbContext.Departments;
         }
-
-        protected CustomDbContext DbContext;
-        private DbSet<Company> CompaniesDBSet;
-        private DbSet<Employee> EmployeeDBSet;
-        private DbSet<Department> DepartmentsDBSet;
 
         private List<Company> GetCompaniesDB()
         {
@@ -57,14 +56,6 @@ namespace ProjekatSoapRest
             companyOld.Departments.AddRange(company.Departments);
         }
 
-        private void PrepairePossibleUpdate(List<Company> companies, long id)
-        {
-            var companyOld = companies.FirstOrDefault(c => c.Id == id);
-            if (companyOld != null)
-            {
-                companies.Remove(companyOld);
-            }
-        }
         private Company AddCompany(Company company)
         {
             var companies = GetCompaniesDB();
@@ -98,6 +89,7 @@ namespace ProjekatSoapRest
             }
             return company;
         }
+
         public Company AddCompanySoap(Company company)
         {
             return AddCompany(company);
@@ -151,6 +143,7 @@ namespace ProjekatSoapRest
         	return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG && (e.FirstName != employee.FirstName || e.LastName != employee.LastName))));
         }
 
+        //xml file database
         private string FilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/", "companies.xml");
 
         private List<Company> GetCompaniesXML()

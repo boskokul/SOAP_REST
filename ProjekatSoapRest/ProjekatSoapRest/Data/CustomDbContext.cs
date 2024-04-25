@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using ProjekatSoapRest.Model;
+using System.Data.Entity;
 
 namespace ProjekatSoapRest.Data
 {
@@ -6,6 +7,7 @@ namespace ProjekatSoapRest.Data
     {
         public DbSet<Company> Companies { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
         public CustomDbContext() : base("name=MyPostgresConnection")
         {
@@ -13,7 +15,6 @@ namespace ProjekatSoapRest.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Company>().ToTable("Companies");
         }
     }
 }

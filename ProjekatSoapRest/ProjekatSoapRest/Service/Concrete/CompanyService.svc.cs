@@ -1,7 +1,9 @@
 ﻿using ProjekatSoapRest.Data;
+using ProjekatSoapRest.Model;
 using ProjekatSoapRest.Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -16,10 +18,14 @@ namespace ProjekatSoapRest
         public CompanyService() {
             DbContext = new CustomDbContext();
             CompaniesDBSet = DbContext.Companies;
+            EmployeeDBSet = DbContext.Employees;
+            DepartmentsDBSet = DbContext.Departments;
         }
 
         protected CustomDbContext DbContext;
         private DbSet<Company> CompaniesDBSet;
+        private DbSet<Employee> EmployeeDBSet;
+        private DbSet<Department> DepartmentsDBSet;
 
         private List<Company> GetCompaniesDB()
         {
@@ -28,21 +34,46 @@ namespace ProjekatSoapRest
 
         private void SaveCompaniesDB(Company company)
         {
-            CompaniesDBSet.Add(company);
+            var companyOld = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).SingleOrDefault(c => c.Id == company.Id);
+            if (companyOld != null)
+            {
+                UpdateCompany(companyOld, company);
+            }
+            else
+            {
+                CompaniesDBSet.Add(company);
+            }
             DbContext.SaveChanges();
         }
 
+        private void UpdateCompany(Company companyOld, Company company)
+        {
+            companyOld.Name = company.Name;
+            EmployeeDBSet.RemoveRange(companyOld.Employees);
+            companyOld.Employees.Clear();
+            companyOld.Employees.AddRange(company.Employees);
+            DepartmentsDBSet.RemoveRange(companyOld.Departments);
+            companyOld.Departments.Clear();
+            companyOld.Departments.AddRange(company.Departments);
+        }
+
+        private void PrepairePossibleUpdate(List<Company> companies, long id)
+        {
+            var companyOld = companies.FirstOrDefault(c => c.Id == id);
+            if (companyOld != null)
+            {
+                companies.Remove(companyOld);
+            }
+        }
         private Company AddCompany(Company company)
         {
-            //var companies = GetCompaniesXML();
             var companies = GetCompaniesDB();
+            companies.RemoveAll(c => c.Id == company.Id);
             if (!ValidateCompany(company, companies))
             {
                 SetResponseStatus(HttpStatusCode.BadRequest);
                 return null;
             }
-            //companies.Add(company);
-            //SaveCompaniesXML(companies);
             SaveCompaniesDB(company);
             SetResponseStatus(HttpStatusCode.OK);
             return company;
@@ -55,7 +86,6 @@ namespace ProjekatSoapRest
 
         private Company GetCompanyById(string companyId)
         {
-            //var company = GetCompanies().Find(c => c.Id.ToString().Equals(companyId));
             WebOperationContext ctx = WebOperationContext.Current;
             var company = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).FirstOrDefault(c => c.Id.ToString() == companyId);
             if (company != null)
@@ -93,7 +123,7 @@ namespace ProjekatSoapRest
             return ValidateCompany(company, GetCompaniesDB());
         }
 
-        private bool ValidateCompany(Company company, List<Company> existingCompanies)
+        public bool ValidateCompany(Company company, List<Company> existingCompanies)
         {
             if (existingCompanies.Any(c => c.Id.ToString().Equals(company.Id)))
             {

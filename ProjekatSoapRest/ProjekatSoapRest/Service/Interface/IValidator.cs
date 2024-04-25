@@ -1,7 +1,9 @@
-﻿namespace ProjekatSoapRest.Service.Interface
+﻿using System.Collections.Generic;
+
+namespace ProjekatSoapRest.Service.Interface
 {
     public interface IValidator
     {
-        bool Validate(Company company);
+        bool ValidateCompany(Company company, List<Company> existingCompanies);
     }
 }

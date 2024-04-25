@@ -13,45 +13,39 @@ namespace ProjekatSoapRest
 {
     public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap, IValidator
     {
-        private string FilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/", "companies.xml");
-
-        private List<Company> GetCompanies()
-        {
-            var serializer = new XmlSerializer(typeof(List<Company>));
-                using (var fileStream = new FileStream(FilePath, FileMode.Open))
-                {
-                    return (List<Company>)serializer.Deserialize(fileStream);
-                }
+        public CompanyService() {
+            DbContext = new CustomDbContext();
+            CompaniesDBSet = DbContext.Companies;
         }
 
         protected CustomDbContext DbContext;
         private DbSet<Company> CompaniesDBSet;
 
+        private List<Company> GetCompaniesDB()
+        {
+            return CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).ToList();
+        }
+
+        private void SaveCompaniesDB(Company company)
+        {
+            CompaniesDBSet.Add(company);
+            DbContext.SaveChanges();
+        }
+
         private Company AddCompany(Company company)
         {
-            DbContext = new CustomDbContext();
-            CompaniesDBSet = DbContext.Companies;
-            var companies = GetCompanies();
+            //var companies = GetCompaniesXML();
+            var companies = GetCompaniesDB();
             if (!ValidateCompany(company, companies))
             {
                 SetResponseStatus(HttpStatusCode.BadRequest);
                 return null;
             }
-            companies.Add(company);
-            SaveCompanies(companies);
+            //companies.Add(company);
+            //SaveCompaniesXML(companies);
+            SaveCompaniesDB(company);
             SetResponseStatus(HttpStatusCode.OK);
-            CompaniesDBSet.Add(company);
-            DbContext.SaveChanges();
             return company;
-        }
-
-        private void SaveCompanies(List<Company> companies)
-        {
-            var serializer = new XmlSerializer(companies.GetType());
-            using (var writer = new StreamWriter(FilePath))
-            {
-                serializer.Serialize(writer, companies);
-            }
         }
 
         private void SetResponseStatus(HttpStatusCode statusCode)
@@ -61,11 +55,9 @@ namespace ProjekatSoapRest
 
         private Company GetCompanyById(string companyId)
         {
-            var company = GetCompanies().Find(c => c.Id.ToString().Equals(companyId));
+            //var company = GetCompanies().Find(c => c.Id.ToString().Equals(companyId));
             WebOperationContext ctx = WebOperationContext.Current;
-            DbContext = new CustomDbContext();
-            CompaniesDBSet = DbContext.Companies;
-            company = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).FirstOrDefault(c => c.Id.ToString() == companyId);
+            var company = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).FirstOrDefault(c => c.Id.ToString() == companyId);
             if (company != null)
             {
                 ctx.OutgoingResponse.StatusCode = HttpStatusCode.OK;
@@ -98,7 +90,7 @@ namespace ProjekatSoapRest
 
         public bool Validate(Company company)
         {
-            return ValidateCompany(company, GetCompanies());
+            return ValidateCompany(company, GetCompaniesDB());
         }
 
         private bool ValidateCompany(Company company, List<Company> existingCompanies)
@@ -127,6 +119,26 @@ namespace ProjekatSoapRest
         private bool IsUniqueEmployee(List<Employee> employees, List<Company> existingCompanies)
         {
         	return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG && (e.FirstName != employee.FirstName || e.LastName != employee.LastName))));
+        }
+
+        private string FilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/", "companies.xml");
+
+        private List<Company> GetCompaniesXML()
+        {
+            var serializer = new XmlSerializer(typeof(List<Company>));
+            using (var fileStream = new FileStream(FilePath, FileMode.Open))
+            {
+                return (List<Company>)serializer.Deserialize(fileStream);
+            }
+        }
+
+        private void SaveCompaniesXML(List<Company> companies)
+        {
+            var serializer = new XmlSerializer(companies.GetType());
+            using (var writer = new StreamWriter(FilePath))
+            {
+                serializer.Serialize(writer, companies);
+            }
         }
     }
 }

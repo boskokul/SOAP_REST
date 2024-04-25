@@ -317,4 +317,38 @@
       </Employee>
     </Employees>
   </Company>
+  <Company>
+    <Id>111</Id>
+    <Name>Firma111</Name>
+    <Departments>
+      <Department>
+        <Id>0</Id>
+        <Name>departman111</Name>
+      </Department>
+      <Department>
+        <Id>0</Id>
+        <Name>Departman zastite</Name>
+      </Department>
+    </Departments>
+    <Employees>
+      <Employee>
+        <JMBG>32445444</JMBG>
+        <FirstName>Mika</FirstName>
+        <LastName>Mikic</LastName>
+        <Email>mejl1@gmail.com</Email>
+        <FormattedDateTime>2020-11-11 11:11:11</FormattedDateTime>
+        <DateOfBirth>2020-11-11T11:11:11</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+      <Employee>
+        <JMBG>4354433</JMBG>
+        <FirstName>Nikac</FirstName>
+        <LastName>Nikic</LastName>
+        <Email>mejl23@gmail.com</Email>
+        <FormattedDateTime>2001-10-11 10:11:11</FormattedDateTime>
+        <DateOfBirth>2001-10-11T10:11:11</DateOfBirth>
+        <DeservesRaise>false</DeservesRaise>
+      </Employee>
+    </Employees>
+  </Company>
 </ArrayOfCompany>

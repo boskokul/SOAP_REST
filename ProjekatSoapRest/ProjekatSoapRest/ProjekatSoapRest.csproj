@@ -107,26 +107,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\companies.xml" />
-    <Content Include="Service\Concrete\CompanyService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CustomDbContext.cs" />
-    <Compile Include="Migrations\202404181440128_MigracijePrve.cs" />
-    <Compile Include="Migrations\202404181440128_MigracijePrve.Designer.cs">
-      <DependentUpon>202404181440128_MigracijePrve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Department.cs" />
-    <Compile Include="Service\Concrete\CompanyService.svc.cs">
-      <DependentUpon>CompanyService.svc</DependentUpon>
-    </Compile>
     <Compile Include="Model\Employee.cs" />
-    <Compile Include="Service\Interface\ICompanyServiceSoap.cs" />
-    <Compile Include="Service\Interface\ICompanyServiceRest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Interface\IValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -139,11 +126,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202404181440128_MigracijePrve.resx">
-      <DependentUpon>202404181440128_MigracijePrve.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

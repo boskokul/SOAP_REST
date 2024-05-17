@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Runtime.Serialization;
 
-namespace ProjekatSoapRest
+namespace ProjekatSoapRest.Model
 {
     [DataContract]
     public class Employee

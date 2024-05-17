@@ -93,11 +93,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Concrete\CustomDbContext.cs" />
-    <Compile Include="Data\Interface\ICustomDbContext.cs" />
-    <Compile Include="Model\Company.cs" />
-    <Compile Include="Model\Department.cs" />
-    <Compile Include="Model\Employee.cs" />
     <Compile Include="Service\Concrete\CompanyService.cs" />
     <Compile Include="Service\Interface\ICompanyServiceRest.cs" />
     <Compile Include="Program.cs" />
@@ -108,6 +103,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjekatSoapRest\ProjekatSoapRest.csproj">
+      <Project>{4fa31e7c-0bb3-4e21-be05-a0b08e4d6ad1}</Project>
+      <Name>ProjekatSoapRest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

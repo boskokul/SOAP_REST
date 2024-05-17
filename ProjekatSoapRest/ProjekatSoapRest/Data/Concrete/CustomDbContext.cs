@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using ConsoleService.Model;
+using ProjekatSoapRest.Model;
 
-namespace ConsoleService.Data
+namespace ProjekatSoapRest.Data
 {
     public class CustomDbContext : DbContext, ICustomDbContext
     {

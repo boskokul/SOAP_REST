@@ -1,11 +1,10 @@
-﻿using ProjekatSoapRest.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
-namespace ProjekatSoapRest
+namespace ProjekatSoapRest.Model
 {
     [DataContract]
     public class Company

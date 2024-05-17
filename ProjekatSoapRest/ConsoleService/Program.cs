@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConsoleService.Data;
+using System;
+using System.Data.Entity;
 using System.ServiceModel;
 
 namespace ConsoleService
@@ -7,7 +9,9 @@ namespace ConsoleService
     {
         static void Main(string[] args)
         {
-            ServiceHost host = new ServiceHost(typeof(ConsoleService.CompanyService));
+            var dbContext = new CustomDbContext();
+            var serviceInstance = new CompanyService(dbContext);
+            ServiceHost host = new ServiceHost(serviceInstance);
             host.Open();
             Console.WriteLine("Service Hosted!");
             Console.ReadLine();

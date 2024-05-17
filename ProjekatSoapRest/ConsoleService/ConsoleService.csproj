@@ -93,7 +93,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CustomDbContext.cs" />
+    <Compile Include="Data\Concrete\CustomDbContext.cs" />
+    <Compile Include="Data\Interface\ICustomDbContext.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />

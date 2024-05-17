@@ -9,9 +9,11 @@ using ConsoleService.Model;
 using ConsoleService.Service.Interface;
 using ConsoleService.Data;
 using System.ServiceModel.Web;
+using System.ServiceModel;
 
 namespace ConsoleService
 {
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap, IValidator
     {
         private CustomDbContext DbContext;
@@ -19,9 +21,9 @@ namespace ConsoleService
         private DbSet<Employee> EmployeeDBSet;
         private DbSet<Department> DepartmentsDBSet;
 
-        public CompanyService()
+        public CompanyService(ICustomDbContext customDbContext)
         {
-            DbContext = new CustomDbContext();
+            DbContext = (CustomDbContext)customDbContext;
             CompaniesDBSet = DbContext.Companies;
             EmployeeDBSet = DbContext.Employees;
             DepartmentsDBSet = DbContext.Departments;

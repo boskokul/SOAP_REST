@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjekatSoapRest", "ProjekatSoapRest\ProjekatSoapRest.csproj", "{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleService", "ConsoleService\ConsoleService.csproj", "{13E92E24-5144-4288-BA65-7C3ED7092D50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FA31E7C-0BB3-4E21-BE05-A0B08E4D6AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E92E24-5144-4288-BA65-7C3ED7092D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E92E24-5144-4288-BA65-7C3ED7092D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E92E24-5144-4288-BA65-7C3ED7092D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E92E24-5144-4288-BA65-7C3ED7092D50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

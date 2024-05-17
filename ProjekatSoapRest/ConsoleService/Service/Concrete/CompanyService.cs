@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -16,59 +15,23 @@ namespace ConsoleService
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class CompanyService : ICompanyServiceRest, ICompanyServiceSoap, IValidator
     {
-        private CustomDbContext DbContext;
-        private DbSet<Company> CompaniesDBSet;
-        private DbSet<Employee> EmployeeDBSet;
-        private DbSet<Department> DepartmentsDBSet;
+        private ICustomDbContext DbContext;
 
         public CompanyService(ICustomDbContext customDbContext)
         {
-            DbContext = (CustomDbContext)customDbContext;
-            CompaniesDBSet = DbContext.Companies;
-            EmployeeDBSet = DbContext.Employees;
-            DepartmentsDBSet = DbContext.Departments;
-        }
-
-        private List<Company> GetCompaniesDB()
-        {
-            return CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).ToList();
-        }
-
-        private void SaveCompaniesDB(Company company)
-        {
-            var companyOld = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).SingleOrDefault(c => c.Id == company.Id);
-            if (companyOld != null)
-            {
-                UpdateCompany(companyOld, company);
-            }
-            else
-            {
-                CompaniesDBSet.Add(company);
-            }
-            DbContext.SaveChanges();
-        }
-
-        private void UpdateCompany(Company companyOld, Company company)
-        {
-            companyOld.Name = company.Name;
-            EmployeeDBSet.RemoveRange(companyOld.Employees);
-            companyOld.Employees.Clear();
-            companyOld.Employees.AddRange(company.Employees);
-            DepartmentsDBSet.RemoveRange(companyOld.Departments);
-            companyOld.Departments.Clear();
-            companyOld.Departments.AddRange(company.Departments);
+            DbContext = customDbContext;
         }
 
         private Company AddCompany(Company company)
         {
-            var companies = GetCompaniesDB();
+            var companies = DbContext.GetCompaniesDB();
             companies.RemoveAll(c => c.Id == company.Id);
             if (!ValidateCompany(company, companies))
             {
                 SetResponseStatus(HttpStatusCode.BadRequest);
                 return null;
             }
-            SaveCompaniesDB(company);
+            DbContext.SaveCompaniesDB(company);
             SetResponseStatus(HttpStatusCode.OK);
             return company;
         }
@@ -81,7 +44,7 @@ namespace ConsoleService
         private Company GetCompanyById(string companyId)
         {
             WebOperationContext ctx = WebOperationContext.Current;
-            var company = CompaniesDBSet.Include(c => c.Departments).Include(c => c.Employees).FirstOrDefault(c => c.Id.ToString() == companyId);
+            var company = DbContext.GetCompanyById(companyId);
             if (company != null)
             {
                 ctx.OutgoingResponse.StatusCode = HttpStatusCode.OK;
@@ -115,7 +78,7 @@ namespace ConsoleService
 
         public bool Validate(Company company)
         {
-            return ValidateCompany(company, GetCompaniesDB());
+            return ValidateCompany(company, DbContext.GetCompaniesDB());
         }
 
         public bool ValidateCompany(Company company, List<Company> existingCompanies)
@@ -146,7 +109,7 @@ namespace ConsoleService
             return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG && (e.FirstName != employee.FirstName || e.LastName != employee.LastName))));
         }
 
-        //xml file database
+        //xml file database (not used anymore)
         private string FilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/", "companies.xml");
 
         private List<Company> GetCompaniesXML()

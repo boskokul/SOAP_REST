@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ProjekatSoapRest.Model;
 
 namespace ProjekatSoapRest.Service.Interface
 {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Xml.Serialization;
-using ConsoleService.Model;
+using ProjekatSoapRest.Model;
 using ConsoleService.Service.Interface;
 using ConsoleService.Data;
 using System.ServiceModel.Web;

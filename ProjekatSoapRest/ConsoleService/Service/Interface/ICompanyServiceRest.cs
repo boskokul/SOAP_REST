@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 using System.ServiceModel.Web;
-using ConsoleService.Model;
+using ProjekatSoapRest.Model;
 
 namespace ConsoleService
 {

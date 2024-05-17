@@ -1,5 +1,5 @@
 ﻿using System.ServiceModel;
-using ConsoleService.Model;
+using ProjekatSoapRest.Model;
 
 namespace ConsoleService.Service.Interface
 {

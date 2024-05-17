@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using ProjekatSoapRest.Model;
 
 namespace ProjekatSoapRest
 {

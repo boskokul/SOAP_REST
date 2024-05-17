@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Xml.Serialization;
 using ProjekatSoapRest.Model;
 using ConsoleService.Service.Interface;
 using ConsoleService.Data;

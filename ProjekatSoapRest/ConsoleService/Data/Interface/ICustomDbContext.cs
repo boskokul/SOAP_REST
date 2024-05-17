@@ -1,12 +1,12 @@
-﻿using System;
+﻿using ConsoleService.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleService.Data
 {
     public interface ICustomDbContext
     {
+        List<Company> GetCompaniesDB();
+        void SaveCompaniesDB(Company company);
+        Company GetCompanyById(string companyId);
     }
 }

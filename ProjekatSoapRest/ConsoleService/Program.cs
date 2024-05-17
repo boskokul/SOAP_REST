@@ -1,6 +1,5 @@
 ﻿using ConsoleService.Data;
 using System;
-using System.Data.Entity;
 using System.ServiceModel;
 
 namespace ConsoleService

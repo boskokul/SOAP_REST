@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using ProjekatSoapRest.Model;
 
-namespace ConsoleService.Data
+namespace ProjekatSoapRest.Data
 {
     public class CustomDbContext : DbContext, ICustomDbContext
     {

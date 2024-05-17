@@ -93,8 +93,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Concrete\CustomDbContext.cs" />
-    <Compile Include="Data\Interface\ICustomDbContext.cs" />
     <Compile Include="Service\Concrete\CompanyService.cs" />
     <Compile Include="Service\Interface\ICompanyServiceRest.cs" />
     <Compile Include="Program.cs" />

@@ -1,7 +1,7 @@
 ﻿using ProjekatSoapRest.Model;
 using System.Collections.Generic;
 
-namespace ConsoleService.Data
+namespace ProjekatSoapRest.Data
 {
     public interface ICustomDbContext
     {

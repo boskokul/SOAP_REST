@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net;
 using ProjekatSoapRest.Model;
 using ConsoleService.Service.Interface;
-using ConsoleService.Data;
+using ProjekatSoapRest.Data;
 using System.ServiceModel.Web;
 using System.ServiceModel;
 

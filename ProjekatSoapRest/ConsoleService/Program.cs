@@ -1,4 +1,4 @@
-﻿using ConsoleService.Data;
+﻿using ProjekatSoapRest.Data;
 using System;
 using System.ServiceModel;
 

@@ -108,26 +108,5 @@ namespace ConsoleService
         {
             return employees.All(employee => existingCompanies.All(c => c.Employees.All(e => e.JMBG != employee.JMBG && (e.FirstName != employee.FirstName || e.LastName != employee.LastName))));
         }
-
-        //xml file database (not used anymore)
-        private string FilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data/", "companies.xml");
-
-        private List<Company> GetCompaniesXML()
-        {
-            var serializer = new XmlSerializer(typeof(List<Company>));
-            using (var fileStream = new FileStream(FilePath, FileMode.Open))
-            {
-                return (List<Company>)serializer.Deserialize(fileStream);
-            }
-        }
-
-        private void SaveCompaniesXML(List<Company> companies)
-        {
-            var serializer = new XmlSerializer(companies.GetType());
-            using (var writer = new StreamWriter(FilePath))
-            {
-                serializer.Serialize(writer, companies);
-            }
-        }
     }
 }
